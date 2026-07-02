@@ -7,6 +7,7 @@ from typing import Optional
 import httpx
 from fastapi import FastAPI, HTTPException, Response
 from pydantic import BaseModel
+from prometheus_fastapi_instrumentator import Instrumentator
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
 logging.basicConfig(level=logging.INFO)
@@ -73,6 +74,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="API Gateway", lifespan=lifespan)
+Instrumentator().instrument(app).expose(app)
 
 
 class ProductIn(BaseModel):
