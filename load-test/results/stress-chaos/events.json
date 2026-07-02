@@ -1,0 +1,15 @@
+{
+  "experiment": "stress-chaos",
+  "t_start": 1782956630.0158138,
+  "t_attack_start": 1782956660.221927,
+  "t_attack_end": 1782956780.392415,
+  "t_end": 1782956870.844648,
+  "steady_state_confirmed": true,
+  "max_replicas_observed": 5,
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/stress-chaos.yaml",
+  "config": {
+    "workers": 2,
+    "load": 100,
+    "duration": "120s"
+  }
+}

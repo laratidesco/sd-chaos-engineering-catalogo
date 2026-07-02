@@ -1,0 +1,20 @@
+{
+  "t_start": 1782956355.643807,
+  "t_end": 1782956416.417792,
+  "api-gateway": {
+    "mean_latency_seconds": 0.0091422134987602,
+    "error_rate": 0.0,
+    "cpu_cores": 0.033474673263612614,
+    "memory_bytes": 111710208.0
+  },
+  "product-service": {
+    "mean_latency_seconds": 0.0038876135975200355,
+    "error_rate": 0.0,
+    "cpu_cores": 0.034474125982729954,
+    "memory_bytes": 130801664.0
+  },
+  "product_service_replicas": {
+    "ready": 2,
+    "desired": 2
+  }
+}

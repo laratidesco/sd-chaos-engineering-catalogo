@@ -1,0 +1,15 @@
+{
+  "experiment": "network-chaos",
+  "t_start": 1782956416.596479,
+  "t_attack_start": 1782956446.9140532,
+  "t_attack_end": 1782956507.1358202,
+  "t_end": 1782956537.296422,
+  "steady_state_confirmed": true,
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/network-chaos.yaml",
+  "config": {
+    "latency": "2s",
+    "jitter": "500ms",
+    "correlation": "25",
+    "duration": "60s"
+  }
+}

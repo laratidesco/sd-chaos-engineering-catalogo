@@ -1,0 +1,16 @@
+{
+  "experiment": "pod-chaos",
+  "t_start": 1782956539.1476748,
+  "t_attack": 1782956569.422243,
+  "t_delete": 1782956629.613503,
+  "t_end": 1782956629.7380412,
+  "steady_state_confirmed": true,
+  "detection_time_seconds": 0.25466084480285645,
+  "recovery_time_seconds": 7.801687002182007,
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/pod-chaos.yaml",
+  "config": {
+    "action": "pod-kill",
+    "mode": "one",
+    "gracePeriod": 0
+  }
+}

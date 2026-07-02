@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "t_start": 1782956355.643807,
+    "t_end": 1782956416.417792,
+    "api-gateway": {
+      "mean_latency_seconds": 0.0091422134987602,
+      "error_rate": 0.0,
+      "cpu_cores": 0.033474673263612614,
+      "memory_bytes": 111710208.0
+    },
+    "product-service": {
+      "mean_latency_seconds": 0.0038876135975200355,
+      "error_rate": 0.0,
+      "cpu_cores": 0.034474125982729954,
+      "memory_bytes": 130801664.0
+    },
+    "product_service_replicas": {
+      "ready": 2,
+      "desired": 2
+    }
+  },
+  "experiments": [
+    {
+      "experiment": "network-chaos",
+      "t_start": 1782956416.596479,
+      "t_attack_start": 1782956446.9140532,
+      "t_attack_end": 1782956507.1358202,
+      "t_end": 1782956537.296422,
+      "steady_state_confirmed": true,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/network-chaos.yaml",
+      "config": {
+        "latency": "2s",
+        "jitter": "500ms",
+        "correlation": "25",
+        "duration": "60s"
+      }
+    },
+    {
+      "experiment": "pod-chaos",
+      "t_start": 1782956539.1476748,
+      "t_attack": 1782956569.422243,
+      "t_delete": 1782956629.613503,
+      "t_end": 1782956629.7380412,
+      "steady_state_confirmed": true,
+      "detection_time_seconds": 0.25466084480285645,
+      "recovery_time_seconds": 7.801687002182007,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/pod-chaos.yaml",
+      "config": {
+        "action": "pod-kill",
+        "mode": "one",
+        "gracePeriod": 0
+      }
+    },
+    {
+      "experiment": "stress-chaos",
+      "t_start": 1782956630.0158138,
+      "t_attack_start": 1782956660.221927,
+      "t_attack_end": 1782956780.392415,
+      "t_end": 1782956870.844648,
+      "steady_state_confirmed": true,
+      "max_replicas_observed": 5,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/stress-chaos.yaml",
+      "config": {
+        "workers": 2,
+        "load": 100,
+        "duration": "120s"
+      }
+    }
+  ]
+}
