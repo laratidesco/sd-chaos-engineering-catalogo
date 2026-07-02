@@ -1,0 +1,16 @@
+# Sobrecarrega a CPU do product-service para acionar o HPA
+# (product-service-hpa.yaml) e observar o escalonamento de réplicas.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-product-service-cpu
+spec:
+  mode: all
+  selector:
+    labelSelectors:
+      app: product-service
+  stressors:
+    cpu:
+      workers: 2
+      load: 100
+  duration: "120s"

@@ -1,0 +1,23 @@
+# Degrada a rede entre o api-gateway e o product-service para exercitar
+# o retry, o timeout e o circuit breaker do gateway.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: gateway-to-service-delay
+spec:
+  action: delay
+  mode: all
+  selector:
+    labelSelectors:
+      app: product-service
+  delay:
+    latency: "2s"
+    jitter: "500ms"
+    correlation: "25"
+  target:
+    mode: all
+    selector:
+      labelSelectors:
+        app: api-gateway
+  direction: to
+  duration: "60s"
