@@ -7,3 +7,6 @@ venv/
 .env
 .pytest_cache/
 .claude
+
+docs/generate_relatorio.py
+docs/relatorio-tecnico-resiliencia.pdf
