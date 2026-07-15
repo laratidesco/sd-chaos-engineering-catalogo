@@ -1,0 +1,23 @@
+# Mesmo ataque de network-chaos.yaml, mas mirando o api-gateway-naive
+# (sem circuit breaker/retry/timeout) para comparar com o gateway resiliente.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: gateway-to-service-delay-naive
+spec:
+  action: delay
+  mode: all
+  selector:
+    labelSelectors:
+      app: product-service-naive
+  delay:
+    latency: "2s"
+    jitter: "500ms"
+    correlation: "25"
+  target:
+    mode: all
+    selector:
+      labelSelectors:
+        app: api-gateway-naive
+  direction: to
+  duration: "60s"

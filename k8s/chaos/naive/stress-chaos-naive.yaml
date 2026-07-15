@@ -1,0 +1,16 @@
+# Mesmo ataque de stress-chaos.yaml, mas mirando o product-service-naive,
+# que nao tem HorizontalPodAutoscaler - nao ha escalonamento para absorver a carga.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: stress-product-service-naive-cpu
+spec:
+  mode: all
+  selector:
+    labelSelectors:
+      app: product-service-naive
+  stressors:
+    cpu:
+      workers: 2
+      load: 100
+  duration: "120s"

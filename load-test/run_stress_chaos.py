@@ -7,7 +7,7 @@ from pathlib import Path
 
 import chaos_lib as lib
 
-MANIFEST = Path(__file__).parent.parent / "k8s" / "chaos" / "stress-chaos.yaml"
+MANIFEST = Path(__file__).parent.parent / "k8s" / "chaos" / "resiliente" / "stress-chaos.yaml"
 RESULTS_DIR = Path(__file__).parent / "results" / "stress-chaos"
 
 BASELINE_SECONDS = 30

@@ -1,0 +1,13 @@
+# Mesmo ataque de pod-chaos.yaml, mas mirando o product-service-naive
+# (1 replica, sem HPA) para comparar com o product-service resiliente (2 replicas).
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: kill-product-service-naive-pod
+spec:
+  action: pod-kill
+  mode: one
+  selector:
+    labelSelectors:
+      app: product-service-naive
+  gracePeriod: 0
