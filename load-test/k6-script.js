@@ -3,7 +3,10 @@ import { check, sleep } from "k6";
 
 const BASE_URL = __ENV.BASE_URL || "http://localhost:8080";
 const DURATION = __ENV.LOAD_DURATION || "180s";
-const TIMEOUT = "10s";
+// Worst case do gateway resiliente sob NetworkChaos: 3 tentativas x 3s de read
+// timeout + backoff entre elas (~10.5s) - 20s da folga suficiente para o
+// cliente nao abandonar uma requisicao que o proprio retry ainda resolveria.
+const TIMEOUT = "20s";
 
 export const options = {
   scenarios: {

@@ -112,17 +112,24 @@ def get_deployment_ready(name, namespace="default"):
     return ready, desired
 
 
-def wait_steady_state(timeout=60, interval=3):
+def wait_steady_state(
+    timeout=60,
+    interval=3,
+    gateway_deployment="api-gateway",
+    product_service_deployment="product-service",
+    require_circuit_closed=True,
+    base_url=GATEWAY_URL,
+):
     deadline = time.monotonic() + timeout
     while time.monotonic() < deadline:
-        state = get_circuit_state()
+        circuit_ok = get_circuit_state(base_url) == "closed" if require_circuit_closed else True
         try:
-            gw_ready, gw_desired = get_deployment_ready("api-gateway")
-            ps_ready, ps_desired = get_deployment_ready("product-service")
+            gw_ready, gw_desired = get_deployment_ready(gateway_deployment)
+            ps_ready, ps_desired = get_deployment_ready(product_service_deployment)
         except RuntimeError:
             gw_ready = gw_desired = ps_ready = ps_desired = -1
         if (
-            state == "closed"
+            circuit_ok
             and gw_ready == gw_desired
             and ps_ready == ps_desired
             and ps_ready > 0
