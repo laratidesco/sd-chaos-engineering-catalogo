@@ -1,17 +1,17 @@
 {
-  "t_start": 1782956355.643807,
-  "t_end": 1782956416.417792,
+  "t_start": 1784088638.274994,
+  "t_end": 1784088699.159706,
   "api-gateway": {
-    "mean_latency_seconds": 0.0091422134987602,
+    "mean_latency_seconds": 0.03317899524881088,
     "error_rate": 0.0,
-    "cpu_cores": 0.033474673263612614,
-    "memory_bytes": 111710208.0
+    "cpu_cores": 0.08005386905326281,
+    "memory_bytes": 165867520.0
   },
   "product-service": {
-    "mean_latency_seconds": 0.0038876135975200355,
+    "mean_latency_seconds": 0.020497580659694377,
     "error_rate": 0.0,
-    "cpu_cores": 0.034474125982729954,
-    "memory_bytes": 130801664.0
+    "cpu_cores": 0.10100718110688274,
+    "memory_bytes": 219332608.0
   },
   "product_service_replicas": {
     "ready": 2,

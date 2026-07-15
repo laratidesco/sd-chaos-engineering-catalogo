@@ -1,11 +1,11 @@
 {
   "experiment": "network-chaos",
-  "t_start": 1782956416.596479,
-  "t_attack_start": 1782956446.9140532,
-  "t_attack_end": 1782956507.1358202,
-  "t_end": 1782956537.296422,
+  "t_start": 1784088708.679899,
+  "t_attack_start": 1784088738.889317,
+  "t_attack_end": 1784088799.072274,
+  "t_end": 1784088829.739403,
   "steady_state_confirmed": true,
-  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/network-chaos.yaml",
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/resiliente/network-chaos.yaml",
   "config": {
     "latency": "2s",
     "jitter": "500ms",

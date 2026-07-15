@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "t_start": 1784083934.46718,
+    "t_end": 1784083995.169218,
+    "api-gateway-naive": {
+      "mean_latency_seconds": 0.021725307726673245,
+      "error_rate": 0.0,
+      "cpu_cores": 0.05503896218117854,
+      "memory_bytes": 60678144.0
+    },
+    "product-service-naive": {
+      "mean_latency_seconds": 0.012487297839029994,
+      "error_rate": 0.0,
+      "cpu_cores": 0.0700111113364018,
+      "memory_bytes": 68755456.0
+    },
+    "product_service_replicas": {
+      "ready": 1,
+      "desired": 1
+    }
+  },
+  "experiments": [
+    {
+      "experiment": "network-chaos-naive",
+      "t_start": 1784083995.340257,
+      "t_attack_start": 1784084025.542206,
+      "t_attack_end": 1784084085.7267032,
+      "t_end": 1784084116.0378351,
+      "steady_state_confirmed": true,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/naive/network-chaos-naive.yaml",
+      "config": {
+        "latency": "2s",
+        "jitter": "500ms",
+        "correlation": "25",
+        "duration": "60s"
+      }
+    },
+    {
+      "experiment": "pod-chaos-naive",
+      "t_start": 1784084117.310894,
+      "t_attack": 1784084147.5156102,
+      "t_delete": 1784084207.697388,
+      "t_end": 1784084207.807008,
+      "steady_state_confirmed": true,
+      "detection_time_seconds": 0.8426816463470459,
+      "recovery_time_seconds": 7.243867874145508,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/naive/pod-chaos-naive.yaml",
+      "config": {
+        "action": "pod-kill",
+        "mode": "one",
+        "gracePeriod": 0
+      }
+    },
+    {
+      "experiment": "stress-chaos-naive",
+      "t_start": 1784084208.109848,
+      "t_attack_start": 1784084238.301844,
+      "t_attack_end": 1784084358.47026,
+      "t_end": 1784084448.892276,
+      "steady_state_confirmed": true,
+      "max_pods_observed": 1,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/naive/stress-chaos-naive.yaml",
+      "config": {
+        "workers": 2,
+        "load": 100,
+        "duration": "120s"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "experiment": "pod-chaos-naive",
+  "t_start": 1784084117.310894,
+  "t_attack": 1784084147.5156102,
+  "t_delete": 1784084207.697388,
+  "t_end": 1784084207.807008,
+  "steady_state_confirmed": true,
+  "detection_time_seconds": 0.8426816463470459,
+  "recovery_time_seconds": 7.243867874145508,
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/naive/pod-chaos-naive.yaml",
+  "config": {
+    "action": "pod-kill",
+    "mode": "one",
+    "gracePeriod": 0
+  }
+}

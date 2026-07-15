@@ -1,18 +1,18 @@
 {
   "baseline": {
-    "t_start": 1782956355.643807,
-    "t_end": 1782956416.417792,
+    "t_start": 1784088638.274994,
+    "t_end": 1784088699.159706,
     "api-gateway": {
-      "mean_latency_seconds": 0.0091422134987602,
+      "mean_latency_seconds": 0.03317899524881088,
       "error_rate": 0.0,
-      "cpu_cores": 0.033474673263612614,
-      "memory_bytes": 111710208.0
+      "cpu_cores": 0.08005386905326281,
+      "memory_bytes": 165867520.0
     },
     "product-service": {
-      "mean_latency_seconds": 0.0038876135975200355,
+      "mean_latency_seconds": 0.020497580659694377,
       "error_rate": 0.0,
-      "cpu_cores": 0.034474125982729954,
-      "memory_bytes": 130801664.0
+      "cpu_cores": 0.10100718110688274,
+      "memory_bytes": 219332608.0
     },
     "product_service_replicas": {
       "ready": 2,
@@ -22,12 +22,12 @@
   "experiments": [
     {
       "experiment": "network-chaos",
-      "t_start": 1782956416.596479,
-      "t_attack_start": 1782956446.9140532,
-      "t_attack_end": 1782956507.1358202,
-      "t_end": 1782956537.296422,
+      "t_start": 1784088708.679899,
+      "t_attack_start": 1784088738.889317,
+      "t_attack_end": 1784088799.072274,
+      "t_end": 1784088829.739403,
       "steady_state_confirmed": true,
-      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/network-chaos.yaml",
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/resiliente/network-chaos.yaml",
       "config": {
         "latency": "2s",
         "jitter": "500ms",
@@ -37,14 +37,14 @@
     },
     {
       "experiment": "pod-chaos",
-      "t_start": 1782956539.1476748,
-      "t_attack": 1782956569.422243,
-      "t_delete": 1782956629.613503,
-      "t_end": 1782956629.7380412,
+      "t_start": 1784083588.6259048,
+      "t_attack": 1784083618.871032,
+      "t_delete": 1784083679.0631511,
+      "t_end": 1784083679.375437,
       "steady_state_confirmed": true,
-      "detection_time_seconds": 0.25466084480285645,
-      "recovery_time_seconds": 7.801687002182007,
-      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/pod-chaos.yaml",
+      "detection_time_seconds": 0.22570395469665527,
+      "recovery_time_seconds": 8.989207029342651,
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/resiliente/pod-chaos.yaml",
       "config": {
         "action": "pod-kill",
         "mode": "one",
@@ -53,13 +53,13 @@
     },
     {
       "experiment": "stress-chaos",
-      "t_start": 1782956630.0158138,
-      "t_attack_start": 1782956660.221927,
-      "t_attack_end": 1782956780.392415,
-      "t_end": 1782956870.844648,
+      "t_start": 1784083679.760437,
+      "t_attack_start": 1784083709.999647,
+      "t_attack_end": 1784083830.178377,
+      "t_end": 1784083920.522814,
       "steady_state_confirmed": true,
       "max_replicas_observed": 5,
-      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/stress-chaos.yaml",
+      "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/resiliente/stress-chaos.yaml",
       "config": {
         "workers": 2,
         "load": 100,

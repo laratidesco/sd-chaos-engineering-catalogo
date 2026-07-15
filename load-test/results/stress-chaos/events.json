@@ -1,12 +1,12 @@
 {
   "experiment": "stress-chaos",
-  "t_start": 1782956630.0158138,
-  "t_attack_start": 1782956660.221927,
-  "t_attack_end": 1782956780.392415,
-  "t_end": 1782956870.844648,
+  "t_start": 1784083679.760437,
+  "t_attack_start": 1784083709.999647,
+  "t_attack_end": 1784083830.178377,
+  "t_end": 1784083920.522814,
   "steady_state_confirmed": true,
   "max_replicas_observed": 5,
-  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/stress-chaos.yaml",
+  "manifest": "/Users/laratidesco/Documents/trabalho_sistemas_distribuidos/k8s/chaos/resiliente/stress-chaos.yaml",
   "config": {
     "workers": 2,
     "load": 100,
